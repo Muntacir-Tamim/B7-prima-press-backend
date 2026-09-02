@@ -9,7 +9,7 @@ const loginUser = catchAsync(
     const payload = req.body;
     const { accessToken, refreshToken } = await authService.loginUser(payload);
 
-    res.cookie("accessToken", refreshToken, {
+    res.cookie("accessToken", accessToken, {
       httpOnly: true,
       secure: false,
       sameSite: "none",
